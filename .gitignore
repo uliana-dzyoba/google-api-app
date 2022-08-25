@@ -130,3 +130,5 @@ dmypy.json
 
 # IntelliJ project specific settings
 .idea
+
+settings.py
