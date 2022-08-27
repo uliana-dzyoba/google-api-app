@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'auth',
+    'appauth',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'main.middleware.AjaxMiddleware'
 ]
 
 ROOT_URLCONF = 'apiproject.urls'
@@ -137,7 +138,9 @@ RECAPTCHA_PRIVATE_KEY = config('RECAPTCHA_PRIVATE_KEY')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = "auth:sign-in"
-LOGIN_REDIRECT_URL = "auth:account"
-LOGOUT_REDIRECT_URL = "auth:sign-in"
+LOGIN_URL = "appauth:sign-in"
+LOGIN_REDIRECT_URL = "appauth:account"
+LOGOUT_REDIRECT_URL = "appauth:sign-in"
+
+BASE_COUNTRY = "UA"
 

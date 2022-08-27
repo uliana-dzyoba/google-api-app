@@ -28,7 +28,7 @@ class AccountView(TemplateView):
     '''
     Generic FormView with our mixin to display user account page
     '''
-    template_name = "auth/account.html"
+    template_name = "appauth/account.html"
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
@@ -63,7 +63,7 @@ def profile_view(request):
         context['google_api_key'] = settings.GOOGLE_API_KEY
         context['base_country'] = settings.BASE_COUNTRY
 
-        return render(request, 'auth/profile.html', context)
+        return render(request, 'appauth/profile.html', context)
 
 
 class SignUpView(AjaxFormMixin, FormView):
@@ -71,7 +71,7 @@ class SignUpView(AjaxFormMixin, FormView):
     Generic FormView with our mixin for user sign-up with reCAPTURE security
     '''
 
-    template_name = "auth/sign_up.html"
+    template_name = "appauth/sign_up.html"
     form_class = UserForm
     success_url = "/"
 
@@ -112,7 +112,7 @@ class SignInView(AjaxFormMixin, FormView):
     Generic FormView with our mixin for user sign-in
     '''
 
-    template_name = "auth/sign_in.html"
+    template_name = "appauth/sign_in.html"
     form_class = AuthForm
     success_url = "/"
 
@@ -139,5 +139,5 @@ def sign_out(request):
     Basic view for user sign out
     '''
     logout(request)
-    return redirect(reverse('auth:sign-in'))
+    return redirect(reverse('appauth:sign-in'))
 

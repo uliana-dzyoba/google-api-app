@@ -1,9 +1,9 @@
 from django.apps import AppConfig
 
 
-class AuthConfig(AppConfig):
+class AppauthConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'auth'
+    name = 'appauth'
 
     def ready(self):
-        import auth.signals
+        import appauth.signals

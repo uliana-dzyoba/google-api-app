@@ -31,7 +31,7 @@ class UserForm(UserCreationForm):
 
 class AuthForm(AuthenticationForm):
     '''
-    Form that uses built-in AuthenticationForm to handel user auth
+    Form that uses built-in AuthenticationForm to handel user appauth
     '''
     username = forms.EmailField(max_length=254, required=True,
                                 widget=forms.TextInput(attrs={'placeholder': '*Email..'}))
